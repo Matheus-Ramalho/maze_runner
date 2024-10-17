@@ -93,15 +93,16 @@ bool walk(Position pos) {
     if(is_valid_position(pos.row+1,pos.col)){       //Cima
         valid_positions.push({pos.row+1,pos.col});
     }
-    if(is_valid_position(pos.row-1,pos.col)){       //Esquerda
-        valid_positions.push({pos.row-1,pos.col});
+        if(is_valid_position(pos.row,pos.col-1)){ //Esquerda
+        valid_positions.push({pos.row,pos.col-1});
     }
     if(is_valid_position(pos.row,pos.col+1)){       //Direita
         valid_positions.push({pos.row,pos.col+1});
     }
-    if(is_valid_position(pos.row,pos.col-1)){       //Baixo
-        valid_positions.push({pos.row,pos.col-1});
+    if(is_valid_position(pos.row-1,pos.col)){       //Baixo
+        valid_positions.push({pos.row-1,pos.col});
     }
+
 
     if(valid_positions.empty()){
            return false; 
